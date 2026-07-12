@@ -1,1 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Jeu Vidéal - Video Game Studio</title>
+    <link rel="icon" type="image/png" href="img/ljv_logo.png">
+    <style>
+        /* --- General Styles --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            line-height: 1.6;
+        }
+
+        /* --- Navbar --- */
+        header {
+            background-color: #1f2833;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 2px solid #66fcf1;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #66fcf1;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            color: #c5c6c7;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #66fcf1;
+        }
+
+        /* --- Sections Layout --- */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+            border-left: 5px solid #45f3ff;
+            padding-left: 15px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- Home Section --- */
+        #home {
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .main-logo {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 15px;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        #home h1 span {
+            color: #66fcf1;
+        }
+
+        #home p {
+            max-width: 800px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #66fcf1;
+            color: #0b0c10;
+            padding: 12px 30px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .btn:hover {
+            background: #45f3ff;
+            transform: translateY(-2px);
+        }
+
+        /* --- Game Sections --- */
+        .game-showcase {
+            background-color: #1f2833;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .game-content {
+            flex: 1;
+        }
+
+        .game-logo {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #45f3ff;
+            color: #0b0c10;
+            padding: 5px 10px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            border-radius: 3px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        /* --- Contact Section --- */
+        #contact {
+            text-align: center;
+            align-items: center;
+            max-width: 800px;
+        }
+
+        /* --- Footer Styles --- */
+        footer {
+            background-color: #1f2833;
+            padding: 40px 20px;
+            color: #c5c6c7;
+            font-size: 0.9rem;
+            border-top: 1px solid #2f3b4c;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        /* Social Media Grid */
+        .social-grid {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .social-btn {
+            display: flex;
+            align-items: center;
+            justify-center: center;
+            width: 45px;
+            height: 45px;
+            background-color: #0b0c10;
+            border: 1px solid #2f3b4c;
+            border-radius: 8px;
+            transition: border-color 0.3s ease, transform 0.2s ease;
+            padding: 10px;
+        }
+
+        .social-btn img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .social-btn:hover {
+            border-color: #66fcf1;
+            transform: translateY(-3px);
+        }
+
+        /* Footer Links List */
+        .footer-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: #c5c6c7;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #66fcf1;
+        }
+
+        .copyright {
+            margin-top: 10px;
+            color: #666;
+            font-size: 0.85rem;
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links li {
+                margin: 0 10px;
+            }
+            #home h1 {
+                font-size: 2.5rem;
+            }
+            .game-showcase {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .game-logo {
+                width: 100%;
+                max-width: 200px;
+                height: auto;
+                order: -1;
+            }
+            h2 {
+                border-left: none;
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">Le Jeu Vidéal</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#ball">ball.</a></li>
+                <li><a href="#adventure-runner">Adventure Runner</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <img src="img/ljv_logo.png" alt="Le Jeu Vidéal Logo" class="main-logo">
+        <h1>Welcome to <span>Le Jeu Vidéal</span></h1>
+        <p>We are an independent video game studio crafting minimal yet unique and thrilling interactive experiences. Explore our latest creations below.</p>
+        <a href="#ball" class="btn">Discover Our Games</a>
+    </section>
+
+    <section id="ball">
+        <div class="game-showcase">
+            <div class="game-content">
+                <span class="badge">Arcade / Platformer</span>
+                <h2>ball.</h2>
+                <p><strong>Survive the Chaos!</strong><br>Take control of a ball and dive into the heart of natural disasters in this fast-paced, endless survival game! Dodge angry birds, escape asteroid showers, and slalom through uprooted trees.<br><br><strong>Key Features:</strong><br>- ⚡ Addictive Gameplay: Simple, intuitive controls perfect for quick, thrilling sessions.<br>- 🖌️ Customize Your Style: Collect coins to unlock exclusive, standout skins.<br>- 🏆 Global Leaderboard: Beat records, challenge your friends, and become the ultimate master!</p>
+                <a href="https://play.google.com/store/apps/details?id=com.naxo.ball" target="_blank" class="btn">Download on the Play Store</a>
+            </div>
+            <img src="img/ball_logo.png" alt="ball. Game Logo" class="game-logo">
+        </div>
+    </section>
+
+    <section id="adventure-runner">
+        <div class="game-showcase">
+            <div class="game-content">
+                <span class="badge">Action / Platformer</span>
+                <h2>Adventure Runner (temporary name)</h2>
+                <p><i>Coming soon...</i></p>
+                <a href="" class="btn">Wishlist Now</a>
+            </div>
+            <img src="logo-adventure.png" alt="Adventure Runner Game Logo" class="game-logo">
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>Have a question about our games, a business inquiry, or just want to say hello? We would love to hear from you. Click the button below to send us a message and our team will get back to you as soon as possible!</p>
+        <a href="mailto:lejeuvideal4@gmail.com" class="btn">Send an Email</a>
+    </section>
+
+    <footer>
+        <div class="social-grid">
+            <a href="https://instagram.com/lejeuvideal" target="_blank" class="social-btn" title="Follow us on Instagram">
+                <img src="img/instagram.png" alt="Instagram">
+            </a>
+            <a href="https://discord.gg/EajYds4qsV" target="_blank" class="social-btn" title="Join our Discord">
+                <img src="img/discord.png" alt="Discord">
+            </a>
+            <a href="https://naxo175.itch.io" target="_blank" class="social-btn" title="Find us on Itch.io">
+                <img src="img/itchio.png" alt="Itch.io">
+            </a>
+        </div>
+
+        <ul class="footer-links">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        </ul>
+
+        <p class="copyright">&copy; 2026 Le Jeu Vidéal. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
