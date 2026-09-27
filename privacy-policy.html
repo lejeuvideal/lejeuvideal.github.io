@@ -233,6 +233,7 @@
                 <li><a href="index.html#home">Home</a></li>
                 <li><a href="index.html#ball">ball.</a></li>
                 <li><a href="index.html#adventure-runner">Adventure Runner</a></li>
+                <li><a href="index.html#fomot">FOMOT</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
         </nav>
@@ -245,6 +246,7 @@
         <div class="selector-container">
             <button class="tab-btn" onclick="showPrivacy(this, 'ball')">ball.</button>
             <button class="tab-btn" onclick="showPrivacy(this, 'adventure')">Adventure Runner</button>
+            <button class="tab-btn" onclick="showPrivacy(this, 'fomot')">FOMOT</button>
         </div>
 
         <div id="privacy-display" class="privacy-box"></div>
@@ -261,6 +263,8 @@
                 targetFile = 'privacy-ball.html';
             } else if (gameKey === 'adventure') {
                 targetFile = 'privacy-adventure-runner.html';
+            } else if (gameKey === 'fomot') {
+                targetFile = 'privacy-fomot.html';
             }
 
             fetch(targetFile)
